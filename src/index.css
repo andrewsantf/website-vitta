@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Vitta Micro Market Design System - Wellness & Technology Theme
+All colors MUST be HSL and based on the Vitta logo palette.
+*/
+
+@layer base {
+  :root {
+    /* Brand Colors - Based on Vitta Logo */
+    --vitta-green: 82 35% 55%; /* Primary green from leaf */
+    --vitta-green-light: 82 35% 65%;
+    --vitta-green-dark: 82 35% 45%;
+    --vitta-brown: 28 8% 32%; /* Dark brown from text */
+    --vitta-brown-light: 28 8% 42%;
+    
+    /* Core System Colors */
+    --background: 0 0% 100%;
+    --foreground: 28 8% 32%; /* Vitta brown for text */
+
+    --card: 0 0% 100%;
+    --card-foreground: 28 8% 32%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 28 8% 32%;
+
+    --primary: 82 35% 55%; /* Vitta green */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 60 9% 98%; /* Very light warm gray */
+    --secondary-foreground: 28 8% 32%;
+
+    --muted: 60 9% 96%;
+    --muted-foreground: 28 8% 52%;
+
+    --accent: 82 35% 55%; /* Vitta green */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 60 9% 91%;
+    --input: 60 9% 96%;
+    --ring: 82 35% 55%; /* Vitta green */
+
+    --radius: 0.75rem;
+
+    /* Wellness-focused gradients */
+    --gradient-wellness: linear-gradient(135deg, hsl(var(--vitta-green)) 0%, hsl(var(--vitta-green-light)) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--secondary)) 100%);
+    
+    /* Elegant shadows */
+    --shadow-wellness: 0 10px 30px -10px hsl(var(--vitta-green) / 0.2);
+    --shadow-card: 0 4px 20px -4px hsl(var(--vitta-brown) / 0.08);
+    --shadow-elegant: 0 20px 60px -10px hsl(var(--vitta-green) / 0.15);
+    
+    /* Smooth transitions */
+    --transition-wellness: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Sidebar (keep existing) */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode with wellness theme */
+    --background: 28 8% 8%;
+    --foreground: 60 9% 96%;
+
+    --card: 28 8% 12%;
+    --card-foreground: 60 9% 96%;
+
+    --popover: 28 8% 12%;
+    --popover-foreground: 60 9% 96%;
+
+    --primary: 82 35% 60%;
+    --primary-foreground: 28 8% 8%;
+
+    --secondary: 28 8% 15%;
+    --secondary-foreground: 60 9% 96%;
+
+    --muted: 28 8% 15%;
+    --muted-foreground: 60 9% 70%;
+
+    --accent: 82 35% 60%;
+    --accent-foreground: 28 8% 8%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 28 8% 20%;
+    --input: 28 8% 15%;
+    --ring: 82 35% 60%;
+    
+    /* Dark mode gradients */
+    --gradient-wellness: linear-gradient(135deg, hsl(var(--vitta-green)) 0%, hsl(var(--vitta-green-dark)) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--secondary)) 100%);
+    
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  
+  /* Wellness-focused typography */
+  .heading-wellness {
+    @apply text-vitta-brown font-bold tracking-tight;
+  }
+  
+  .text-wellness {
+    @apply text-muted-foreground leading-relaxed;  
+  }
+}
+
+@layer components {
+  /* Wellness button variants */
+  .btn-wellness {
+    @apply bg-vitta-green text-white px-8 py-4 rounded-xl font-semibold shadow-wellness hover:shadow-elegant transition-all duration-300 hover:scale-105 hover:bg-vitta-green-dark;
+  }
+  
+  .btn-wellness-outline {
+    @apply border-2 border-vitta-green text-vitta-green px-8 py-4 rounded-xl font-semibold hover:bg-vitta-green hover:text-white transition-all duration-300;
+  }
+  
+  /* Card styles */
+  .card-wellness {
+    @apply bg-white rounded-2xl p-8 shadow-card hover:shadow-elegant transition-all duration-300 border border-border/50;
+  }
+}
