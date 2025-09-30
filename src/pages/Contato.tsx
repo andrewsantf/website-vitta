@@ -35,7 +35,7 @@ const Contato = () => {
     {
       icon: Phone,
       title: "Telefone",
-      info: "(61) 99999-9999",
+      info: "(61) 99108-1071",
       description: "De segunda a sexta, das 8h às 18h"
     },
     {
