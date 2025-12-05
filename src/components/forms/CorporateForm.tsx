@@ -75,7 +75,7 @@ export const CorporateForm = () => {
                         id="phone"
                         type="tel"
                         {...register("phone")}
-                        placeholder="(61) 98427-5639"
+                        placeholder="(61) 99999-9999"
                         className="h-12"
                     />
                     {errors.phone && <p className="text-sm text-red-500">{errors.phone.message}</p>}

@@ -204,7 +204,7 @@ const ParaCondominios = () => {
                     value={formData.phone}
                     onChange={(e) => handleChange('phone', e.target.value)}
                     required
-                    placeholder="(61) 98427-5639"
+                    placeholder="(61) 99999-9999"
                     className="h-12"
                   />
                 </div>
