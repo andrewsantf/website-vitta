@@ -52,7 +52,7 @@ const ContactFormSection = () => {
             Solicite uma Proposta
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Preencha o formulário e nossa equipe entrará em contato para apresentar 
+            Preencha o formulário e nossa equipe entrará em contato para apresentar
             a melhor solução para seu condomínio ou empresa
           </p>
         </div>
@@ -96,7 +96,7 @@ const ContactFormSection = () => {
                   value={formData.phone}
                   onChange={(e) => handleChange('phone', e.target.value)}
                   required
-                  placeholder="(61) 99999-9999"
+                  placeholder="(61) 98427-5639"
                   className="h-12"
                 />
               </div>
@@ -126,8 +126,8 @@ const ContactFormSection = () => {
               />
             </div>
 
-            <Button 
-              type="submit" 
+            <Button
+              type="submit"
               disabled={isSubmitting}
               className="btn-wellness w-full group"
             >

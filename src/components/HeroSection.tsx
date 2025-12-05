@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { ArrowRight, CheckCircle } from 'lucide-react';
+import { ArrowRight, CheckCircle, Clock, ShieldCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import heroImage from '@/assets/hero-micro-market.jpg';
 
@@ -22,7 +22,7 @@ const HeroSection = () => {
                 Leve a conveniência e o <span className="text-vitta-green">bem-estar</span> da Vitta
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                Micro markets autônomos, sem custo de instalação e com praticidade 
+                Micro markets autônomos, sem custo de instalação e com praticidade
                 total para seu condomínio ou empresa. Rápido, fácil e disponível 24h.
               </p>
             </div>
@@ -39,13 +39,13 @@ const HeroSection = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/para-empresas#proposta">
-                <Button className="btn-wellness group">
+              <Link to="/para-empresas#proposta" className="w-full sm:w-auto">
+                <Button className="btn-wellness group w-full sm:w-auto">
                   Proposta para sua Empresa
                 </Button>
               </Link>
-              <Link to="/para-condominios#proposta">
-                <Button className="btn-wellness group">
+              <Link to="/para-condominios#proposta" className="w-full sm:w-auto">
+                <Button className="btn-wellness group w-full sm:w-auto">
                   Proposta para seu Condomínio
                 </Button>
               </Link>
@@ -55,26 +55,32 @@ const HeroSection = () => {
           {/* Hero Image */}
           <div className="relative">
             <div className="relative overflow-hidden rounded-2xl shadow-elegant">
-              <img 
-                src={heroImage} 
+              <img
+                src={heroImage}
                 alt="Micro market moderno da Vitta em ambiente corporativo"
                 className="w-full h-auto object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-vitta-green/20 to-transparent"></div>
             </div>
-            
+
             {/* Floating Stats */}
-            <div className="absolute -bottom-6 -left-6 bg-white rounded-xl p-6 shadow-wellness">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-vitta-green">24/7</div>
-                <div className="text-sm text-vitta-brown">Funcionamento</div>
+            <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-3 md:p-5 shadow-xl border border-vitta-green/10 flex items-center gap-2 md:gap-3 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
+              <div className="bg-vitta-green/10 p-1.5 md:p-2.5 rounded-xl text-vitta-green">
+                <Clock size={24} className="w-4 h-4 md:w-6 md:h-6" />
+              </div>
+              <div>
+                <div className="text-lg md:text-2xl font-bold text-vitta-green leading-none">24/7</div>
+                <div className="text-[10px] md:text-xs text-vitta-brown font-medium mt-0.5">Funcionamento</div>
               </div>
             </div>
-            
-            <div className="absolute -top-6 -right-6 bg-white rounded-xl p-6 shadow-wellness">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-vitta-green">100%</div>
-                <div className="text-sm text-vitta-brown">Autônomo</div>
+
+            <div className="absolute -top-6 -right-6 bg-white rounded-2xl p-3 md:p-5 shadow-xl border border-vitta-green/10 flex items-center gap-2 md:gap-3 animate-in fade-in slide-in-from-top-4 duration-700 delay-500">
+              <div className="bg-vitta-green/10 p-1.5 md:p-2.5 rounded-xl text-vitta-green">
+                <ShieldCheck size={24} className="w-4 h-4 md:w-6 md:h-6" />
+              </div>
+              <div>
+                <div className="text-lg md:text-2xl font-bold text-vitta-green leading-none">100%</div>
+                <div className="text-[10px] md:text-xs text-vitta-brown font-medium mt-0.5">Autônomo</div>
               </div>
             </div>
           </div>

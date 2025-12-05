@@ -1,18 +1,20 @@
 import Layout from '@/components/Layout';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { 
-  Calendar, 
-  Settings, 
-  Truck, 
-  PlayCircle, 
-  ShoppingCart, 
-  Scan, 
+import {
+  Calendar,
+  Settings,
+  Truck,
+  PlayCircle,
+  ShoppingCart,
+  Scan,
   CreditCard,
-  CheckCircle 
+  CheckCircle
 } from 'lucide-react';
 import selfCheckoutImage from '@/assets/self-checkout-demo.jpg';
 import heroImage from '@/assets/hero-micro-market.jpg';
+import featuresImage from '@/assets/sistema-market.jpg';
+import { SEO } from '@/components/SEO';
 
 const ComoFunciona = () => {
   const processSteps = [
@@ -70,6 +72,11 @@ const ComoFunciona = () => {
 
   return (
     <Layout>
+      <SEO
+        title="Como Funciona"
+        description="Entenda o processo simples de implementação e uso dos micro markets Vitta. Instalação gratuita, operação 24/7 e pagamento fácil."
+        keywords="como funciona micro market, instalação micro market, funcionamento mercado autônomo"
+      />
       {/* Hero Section */}
       <section className="bg-gradient-hero py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -79,7 +86,7 @@ const ComoFunciona = () => {
                 Como Funciona a <span className="text-vitta-green">Vitta</span>
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                Um processo simples e transparente, desde a instalação até o uso diário. 
+                Um processo simples e transparente, desde a instalação até o uso diário.
                 Conheça cada etapa para ter um micro market em seu espaço.
               </p>
             </div>
@@ -108,7 +115,7 @@ const ComoFunciona = () => {
                   {index < processSteps.length - 1 && (
                     <div className="hidden lg:block absolute top-12 -right-4 w-8 h-0.5 bg-vitta-green/30"></div>
                   )}
-                  
+
                   <div className="w-20 h-20 bg-vitta-green/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
                     <IconComponent className="text-vitta-green" size={32} />
                   </div>
@@ -165,8 +172,8 @@ const ComoFunciona = () => {
             </div>
 
             <div className="relative">
-              <img 
-                src={selfCheckoutImage} 
+              <img
+                src={selfCheckoutImage}
                 alt="Demonstração de uso do sistema de self-checkout"
                 className="w-full h-auto object-cover rounded-2xl shadow-card-wellness"
               />
@@ -182,11 +189,12 @@ const ComoFunciona = () => {
       <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="relative">
-              <img 
-                src={heroImage} 
+            {/* Desktop Image (Left) */}
+            <div className="relative hidden lg:block">
+              <img
+                src={featuresImage}
                 alt="Micro market da Vitta em funcionamento"
-                className="w-full h-auto object-cover rounded-2xl shadow-elegant"
+                className="w-auto h-auto max-w-full max-h-[500px] mx-auto rounded-2xl shadow-elegant"
               />
             </div>
 
@@ -200,6 +208,15 @@ const ComoFunciona = () => {
                 </p>
               </div>
 
+              {/* Mobile Image (Between Title and Features) */}
+              <div className="relative lg:hidden">
+                <img
+                  src={featuresImage}
+                  alt="Micro market da Vitta em funcionamento"
+                  className="w-auto h-auto max-w-full max-h-[500px] mx-auto rounded-2xl shadow-elegant"
+                />
+              </div>
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {features.map((feature, index) => (
                   <div key={index} className="flex items-center space-x-3">
@@ -210,13 +227,13 @@ const ComoFunciona = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/para-empresas">
-                  <Button className="btn-wellness">
+                <Link to="/para-empresas" className="w-full sm:w-auto">
+                  <Button className="btn-wellness w-full sm:w-auto">
                     Para Empresas
                   </Button>
                 </Link>
-                <Link to="/para-condominios">
-                  <Button className="btn-wellness">
+                <Link to="/para-condominios" className="w-full sm:w-auto">
+                  <Button className="btn-wellness w-full sm:w-auto">
                     Para Condomínios
                   </Button>
                 </Link>

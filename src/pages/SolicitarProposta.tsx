@@ -7,6 +7,7 @@ import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
 import { Send, CheckCircle } from 'lucide-react';
+import { SEO } from '@/components/SEO';
 
 const SolicitarProposta = () => {
   const { toast } = useToast();
@@ -52,6 +53,11 @@ const SolicitarProposta = () => {
 
   return (
     <Layout>
+      <SEO
+        title="Solicitar Proposta"
+        description="Solicite uma proposta personalizada para ter um micro market Vitta em seu condomínio ou empresa. Sem custo de instalação."
+        keywords="solicitar proposta micro market, orçamento mercado autônomo, vitta proposta"
+      />
       {/* Hero Section */}
       <section className="bg-gradient-hero py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -61,7 +67,7 @@ const SolicitarProposta = () => {
                 Solicite sua <span className="text-vitta-green">Proposta</span>
               </h1>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-                Preencha o formulário e nossa equipe entrará em contato para apresentar 
+                Preencha o formulário e nossa equipe entrará em contato para apresentar
                 a melhor solução de micro market para seu condomínio ou empresa
               </p>
             </div>
@@ -120,7 +126,7 @@ const SolicitarProposta = () => {
                     value={formData.phone}
                     onChange={(e) => handleChange('phone', e.target.value)}
                     required
-                    placeholder="(61) 99999-9999"
+                    placeholder="(61) 98427-5639"
                     className="h-12"
                   />
                 </div>
@@ -150,8 +156,8 @@ const SolicitarProposta = () => {
                 />
               </div>
 
-              <Button 
-                type="submit" 
+              <Button
+                type="submit"
                 disabled={isSubmitting}
                 className="btn-wellness w-full group"
               >

@@ -1,13 +1,14 @@
 import Layout from '@/components/Layout';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { 
+import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { HelpCircle, MessageCircle } from 'lucide-react';
+import { SEO } from '@/components/SEO';
 
 const FAQ = () => {
   const faqs = [
@@ -55,6 +56,11 @@ const FAQ = () => {
 
   return (
     <Layout>
+      <SEO
+        title="Perguntas Frequentes"
+        description="Tire suas dúvidas sobre os micro markets da Vitta. Instalação, custos, reposição, segurança e muito mais."
+        keywords="faq micro market, dúvidas mercado autônomo, perguntas frequentes vitta"
+      />
       {/* Hero Section */}
       <section className="bg-gradient-hero py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -77,8 +83,8 @@ const FAQ = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, index) => (
-              <AccordionItem 
-                key={index} 
+              <AccordionItem
+                key={index}
                 value={`item-${index}`}
                 className="card-wellness border-none"
               >
@@ -104,11 +110,11 @@ const FAQ = () => {
                 Não encontrou sua dúvida?
               </h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Nossa equipe está pronta para esclarecer qualquer questão sobre 
+                Nossa equipe está pronta para esclarecer qualquer questão sobre
                 os micro markets da Vitta
               </p>
             </div>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/contato">
                 <Button className="btn-wellness">

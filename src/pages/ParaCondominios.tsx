@@ -7,6 +7,7 @@ import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
 import { Home, Clock, ShieldCheck, TrendingUp, Send } from 'lucide-react';
 import residentialImage from '@/assets/residential-market.jpg';
+import { SEO } from '@/components/SEO';
 
 const ParaCondominios = () => {
   const { toast } = useToast();
@@ -79,6 +80,11 @@ const ParaCondominios = () => {
 
   return (
     <Layout>
+      <SEO
+        title="Para Condomínios"
+        description="Leve conveniência e segurança para seu condomínio com um micro market autônomo. Valorização do imóvel e conforto para os moradores."
+        keywords="micro market condomínio, mercado autônomo residencial, conveniência condomínio, valorização imóvel"
+      />
       {/* Hero Section */}
       <section className="bg-gradient-hero py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -89,11 +95,11 @@ const ParaCondominios = () => {
                   Micro Markets para <span className="text-vitta-green">Condomínios</span>
                 </h1>
                 <p className="text-xl text-muted-foreground leading-relaxed">
-                  Ofereça mais comodidade e praticidade aos moradores com 
+                  Ofereça mais comodidade e praticidade aos moradores com
                   nossos micro markets residenciais personalizados.
                 </p>
               </div>
-              <Button 
+              <Button
                 className="btn-wellness"
                 onClick={() => {
                   const element = document.getElementById('proposta');
@@ -103,10 +109,10 @@ const ParaCondominios = () => {
                 Solicitar Proposta Residencial
               </Button>
             </div>
-            
+
             <div className="relative">
-              <img 
-                src={residentialImage} 
+              <img
+                src={residentialImage}
                 alt="Micro market instalado em área comum de condomínio"
                 className="w-full h-auto object-cover rounded-2xl shadow-elegant"
               />
@@ -198,7 +204,7 @@ const ParaCondominios = () => {
                     value={formData.phone}
                     onChange={(e) => handleChange('phone', e.target.value)}
                     required
-                    placeholder="(61) 99999-9999"
+                    placeholder="(61) 98427-5639"
                     className="h-12"
                   />
                 </div>
@@ -240,8 +246,8 @@ const ParaCondominios = () => {
                 />
               </div>
 
-              <Button 
-                type="submit" 
+              <Button
+                type="submit"
                 disabled={isSubmitting}
                 className="btn-wellness w-full group"
               >

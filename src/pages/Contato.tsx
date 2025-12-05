@@ -5,14 +5,15 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Clock, 
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Clock,
   Send,
-  MessageCircle 
+  MessageCircle
 } from 'lucide-react';
+import { SEO } from '@/components/SEO';
 
 const Contato = () => {
   const { toast } = useToast();
@@ -35,7 +36,7 @@ const Contato = () => {
     {
       icon: Phone,
       title: "Telefone",
-      info: "(61) 99108-1071",
+      info: "(61) 98427-5639",
       description: "De segunda a sexta, das 8h às 18h"
     },
     {
@@ -77,7 +78,7 @@ const Contato = () => {
   };
 
   const handleWhatsAppClick = () => {
-    const whatsappNumber = "5561991081071";
+    const whatsappNumber = "5561984275639";
     const message = "Olá! Gostaria de saber mais sobre a Vitta Micro Market.";
     const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
@@ -85,6 +86,11 @@ const Contato = () => {
 
   return (
     <Layout>
+      <SEO
+        title="Contato"
+        description="Entre em contato com a Vitta Micro Market. Estamos prontos para atender seu condomínio ou empresa em Brasília e região."
+        keywords="contato vitta, telefone vitta micro market, email vitta, atendimento micro market"
+      />
       {/* Hero Section */}
       <section className="bg-gradient-hero py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -94,7 +100,7 @@ const Contato = () => {
                 Entre em <span className="text-vitta-green">Contato</span>
               </h1>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-                Estamos prontos para esclarecer suas dúvidas e apresentar a melhor 
+                Estamos prontos para esclarecer suas dúvidas e apresentar a melhor
                 solução de micro market para seu espaço
               </p>
             </div>
@@ -210,8 +216,8 @@ const Contato = () => {
                   />
                 </div>
 
-                <Button 
-                  type="submit" 
+                <Button
+                  type="submit"
                   disabled={isSubmitting}
                   className="btn-wellness w-full group"
                 >
@@ -239,11 +245,11 @@ const Contato = () => {
                       Prefere WhatsApp?
                     </h3>
                     <p className="text-muted-foreground">
-                      Converse conosco diretamente pelo WhatsApp para um atendimento 
+                      Converse conosco diretamente pelo WhatsApp para um atendimento
                       mais rápido e personalizado
                     </p>
                   </div>
-                  <Button 
+                  <Button
                     onClick={handleWhatsAppClick}
                     className="btn-wellness w-full"
                   >
