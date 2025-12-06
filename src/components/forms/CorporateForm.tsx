@@ -30,16 +30,34 @@ export const CorporateForm = () => {
 
     const onSubmit = async (data: FormData) => {
         setIsSubmitting(true);
-        console.log(data); // Simulate API call
 
-        setTimeout(() => {
+        try {
+            const { submitToFormspree } = await import('@/lib/api');
+            const result = await submitToFormspree(data);
+
+            if (result.success) {
+                toast({
+                    title: "Proposta solicitada com sucesso!",
+                    description: "Nossa equipe entrará em contato em breve para agendar uma visita técnica.",
+                });
+                reset();
+            } else {
+                toast({
+                    title: "Erro ao enviar",
+                    description: "Não foi possível enviar sua solicitação. Por favor, tente novamente.",
+                    variant: "destructive"
+                });
+            }
+        } catch (error) {
+            console.error(error);
             toast({
-                title: "Proposta solicitada com sucesso!",
-                description: "Nossa equipe entrará em contato em breve para agendar uma visita técnica.",
+                title: "Erro ao enviar",
+                description: "Ocorreu um erro inesperado.",
+                variant: "destructive"
             });
+        } finally {
             setIsSubmitting(false);
-            reset();
-        }, 1000);
+        }
     };
 
     return (
