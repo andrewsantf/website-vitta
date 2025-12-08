@@ -14,7 +14,8 @@ export const submitToFormspree = async (data: SubmissionData): Promise<{ success
         const response = await fetch(FORMSPREE_URL, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
             },
             body: JSON.stringify(data)
         });
@@ -30,7 +31,7 @@ export const submitToFormspree = async (data: SubmissionData): Promise<{ success
         }
 
     } catch (error) {
-        console.error('Error submitting form:', error);
+        console.error('Erro ao enviar formulário:', error);
         return { success: false, message: 'Falha ao enviar formulário. Tente novamente.' };
     }
 };

@@ -57,21 +57,39 @@ const ParaCondominios = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    setTimeout(() => {
+    try {
+      const { submitToFormspree } = await import('@/lib/api');
+      const result = await submitToFormspree(formData);
+
+      if (result.success) {
+        toast({
+          title: "Proposta solicitada com sucesso!",
+          description: "Nossa equipe entrará em contato em breve para agendar uma visita técnica.",
+        });
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          condominium: '',
+          units: '',
+          message: ''
+        });
+      } else {
+        toast({
+          title: "Erro ao enviar",
+          description: result.message || "Ocorreu um erro. Tente novamente ou nos chame no WhatsApp.",
+          variant: "destructive"
+        });
+      }
+    } catch (error) {
       toast({
-        title: "Proposta solicitada com sucesso!",
-        description: "Nossa equipe entrará em contato em breve para agendar uma visita técnica.",
+        title: "Erro ao enviar",
+        description: "Ocorreu um erro inesperado.",
+        variant: "destructive"
       });
+    } finally {
       setIsSubmitting(false);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        condominium: '',
-        units: '',
-        message: ''
-      });
-    }, 1000);
+    }
   };
 
   const handleChange = (field: string, value: string) => {

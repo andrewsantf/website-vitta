@@ -57,20 +57,38 @@ const Contato = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    setTimeout(() => {
+    try {
+      const { submitToFormspree } = await import('@/lib/api');
+      const result = await submitToFormspree(formData);
+
+      if (result.success) {
+        toast({
+          title: "Mensagem enviada com sucesso!",
+          description: "Recebemos sua mensagem e entraremos em contato em breve.",
+        });
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          subject: '',
+          message: ''
+        });
+      } else {
+        toast({
+          title: "Erro ao enviar",
+          description: result.message || "Ocorreu um erro. Tente novamente ou nos chame no WhatsApp.",
+          variant: "destructive"
+        });
+      }
+    } catch (error) {
       toast({
-        title: "Mensagem enviada com sucesso!",
-        description: "Recebemos sua mensagem e entraremos em contato em breve.",
+        title: "Erro ao enviar",
+        description: "Ocorreu um erro inesperado.",
+        variant: "destructive"
       });
+    } finally {
       setIsSubmitting(false);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        subject: '',
-        message: ''
-      });
-    }, 1000);
+    }
   };
 
   const handleChange = (field: string, value: string) => {
