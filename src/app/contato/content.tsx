@@ -60,8 +60,8 @@ const ContatoContent = () => {
                                         <div>
                                             <h3 className="text-lg font-bold text-vitta-green-dark mb-1">E-mail</h3>
                                             <p className="text-sm text-muted-foreground mb-2">Comercial</p>
-                                            <a href="mailto:contato@vittamarket.com.br" className="text-base font-semibold hover:text-vitta-green transition-colors block break-all">
-                                                contato@vittamarket.com.br
+                                            <a href="mailto:contato@vittamicromarket.com.br" className="text-base font-semibold hover:text-vitta-green transition-colors block break-all">
+                                                contato@vittamicromarket.com.br
                                             </a>
                                         </div>
                                     </div>
