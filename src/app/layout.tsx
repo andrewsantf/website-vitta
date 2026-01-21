@@ -7,6 +7,8 @@ import { TooltipProvider } from "@/components/ui/tooltip"
 import Navigation from "@/components/Navigation"
 import Footer from "@/components/Footer"
 
+import WhatsAppButton from "@/components/WhatsAppButton"
+
 const montserrat = Montserrat({
     subsets: ['latin'],
     weight: ['400', '500', '600', '700'],
@@ -37,6 +39,7 @@ export default function RootLayout({
                 <TooltipProvider>
                     <Navigation />
                     {children}
+                    <WhatsAppButton />
                     <Footer />
                     <Toaster />
                     <Sonner />
