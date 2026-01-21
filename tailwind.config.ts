@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       colors: {
-        /* Vitta Brand Colors */
+        /* Vitta Brand Colors v2 */
         "vitta-green": {
           DEFAULT: "hsl(var(--vitta-green))",
           light: "hsl(var(--vitta-green-light))",
@@ -24,7 +24,7 @@ export default {
           DEFAULT: "hsl(var(--vitta-brown))",
           light: "hsl(var(--vitta-brown-light))",
         },
-        
+
         /* System Colors */
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -71,17 +71,17 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Poppins', 'system-ui', 'sans-serif'],
-        heading: ['Montserrat', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-poppins)', 'system-ui', 'sans-serif'],
+        heading: ['var(--font-montserrat)', 'system-ui', 'sans-serif'],
       },
       backgroundImage: {
-        'gradient-wellness': 'var(--gradient-wellness)',
-        'gradient-hero': 'var(--gradient-hero)',
+        'gradient-wellness': 'var(--gradient-wellness-premium)',
+        'gradient-glass': 'var(--gradient-glass)',
+        'gradient-soft': 'var(--gradient-soft)',
       },
       boxShadow: {
-        'wellness': 'var(--shadow-wellness)',
-        'card-wellness': 'var(--shadow-card)',
-        'elegant': 'var(--shadow-elegant)',
+        'glass': 'var(--shadow-glass)',
+        'soft': 'var(--shadow-soft)',
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -90,25 +90,23 @@ export default {
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
         },
+        "float": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10px)" },
+        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "float": "float 6s ease-in-out infinite",
+        "float-delayed": "float 6s ease-in-out 3s infinite",
       },
     },
   },

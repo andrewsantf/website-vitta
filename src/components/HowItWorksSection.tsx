@@ -1,79 +1,128 @@
-import { ShoppingCart, Scan, CreditCard } from 'lucide-react';
+"use client";
+
+import { ShoppingCart, Scan, CreditCard, ArrowRight } from 'lucide-react';
 import selfCheckoutImage from '@/assets/self-checkout-demo.jpg';
+import { motion } from 'framer-motion';
 
 const HowItWorksSection = () => {
   const steps = [
     {
       icon: ShoppingCart,
-      title: "1. Escolha seus produtos",
-      description: "Navegue pela seleção curada de produtos práticos e de conveniência disponíveis 24 horas."
+      title: "1. Escolha",
+      description: "Navegue pela nossa seleção premium e escolha seus produtos favoritos."
     },
     {
       icon: Scan,
-      title: "2. Escaneie os códigos",
-      description: "Use o scanner integrado para ler os códigos de barras dos produtos escolhidos."
+      title: "2. Escaneie",
+      description: "Use o leitor para identificar os produtos rapidamente."
     },
     {
       icon: CreditCard,
-      title: "3. Pague no totem",
-      description: "Finalize sua compra diretamente no totem de pagamento com cartão - sem necessidade de aplicativo."
+      title: "3. Pague",
+      description: "Pagamento seguro e imediato no totem, sem filas."
     }
   ];
 
   return (
-    <section className="py-20 bg-secondary/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 bg-gradient-to-b from-white to-secondary/30 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold font-heading text-vitta-brown mb-4">
+        <div className="text-center mb-20">
+          <motion.span
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-vitta-green font-semibold tracking-wider text-sm uppercase mb-4 block"
+          >
+            SIMPLICIDADE
+          </motion.span>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-4xl md:text-5xl font-bold font-heading text-vitta-green-dark mb-6"
+          >
             Como Funciona
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Um processo simples e moderno que torna a experiência de compra prática e segura
-          </p>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-xl text-muted-foreground max-w-2xl mx-auto"
+          >
+            Tecnologia intuitiva que coloca você no controle. Sem filas, sem complicações.
+          </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Steps */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+          {/* Steps List */}
           <div className="space-y-8">
             {steps.map((step, index) => {
               const IconComponent = step.icon;
               return (
-                <div key={index} className="flex items-start space-x-6">
-                  <div className="flex-shrink-0">
-                    <div className="w-16 h-16 bg-vitta-green/10 rounded-2xl flex items-center justify-center">
-                      <IconComponent className="text-vitta-green" size={28} />
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.2 }}
+                  className="group flex items-start gap-6 p-6 rounded-3xl bg-white border border-transparent hover:border-vitta-green/20 hover:shadow-glass transition-all duration-300 cursor-default"
+                >
+                  <div className="flex-shrink-0 relative">
+                    <div className="w-16 h-16 rounded-2xl bg-vitta-green/10 flex items-center justify-center group-hover:bg-vitta-green group-hover:text-white transition-colors duration-300">
+                      <IconComponent size={28} />
                     </div>
+                    {index < steps.length - 1 && (
+                      <div className="absolute top-16 left-1/2 -translate-x-1/2 w-0.5 h-12 bg-gray-100 group-hover:bg-vitta-green/30 transition-colors duration-300 hidden lg:block" />
+                    )}
                   </div>
-                  <div className="flex-grow">
-                    <h3 className="text-xl font-semibold text-vitta-brown mb-2">
+                  <div>
+                    <h3 className="text-2xl font-bold text-vitta-green-dark mb-2 group-hover:text-vitta-green transition-colors">
                       {step.title}
                     </h3>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors">
                       {step.description}
                     </p>
                   </div>
-                </div>
+                </motion.div>
               );
             })}
           </div>
 
-          {/* Demo Image */}
-          <div className="relative">
-            <div className="relative overflow-hidden rounded-2xl shadow-card-wellness">
-              <img 
-                src={selfCheckoutImage} 
-                alt="Demonstração de uso do sistema de self-checkout"
-                className="w-full h-auto object-cover"
+          {/* Visual Demo */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="relative"
+          >
+            <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-8 border-white">
+              <img
+                src={selfCheckoutImage.src || selfCheckoutImage}
+                alt="Demonstração Self-checkout"
+                className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-vitta-brown/10 to-transparent"></div>
+
+              {/* Overlay Content */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex flex-col justify-end p-4 md:p-8">
+                <div className="glass-panel p-4 md:p-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-white">
+                  <p className="font-semibold text-base md:text-lg mb-1 md:mb-2">Autoatendimento Prático</p>
+                  <p className="text-xs md:text-sm text-white/80 leading-relaxed">
+                    Experiência de compra ágil e intuitiva. A tecnologia cuida do resto para você aproveitar seu tempo.
+                  </p>
+                </div>
+              </div>
             </div>
-            
-            {/* Highlight badge */}
-            <div className="absolute top-6 left-6 bg-vitta-green text-white px-4 py-2 rounded-full text-sm font-semibold">
-              Sem aplicativo necessário
-            </div>
-          </div>
+
+            {/* Decorative Dots */}
+            <div className="absolute -top-12 -right-12 w-32 h-32 pattern-dots opacity-20" />
+            <div className="absolute -bottom-12 -left-12 w-32 h-32 pattern-dots opacity-20" />
+          </motion.div>
         </div>
       </div>
     </section>

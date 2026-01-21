@@ -1,14 +1,18 @@
+"use client";
+
 import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import Link from 'next/link';
+import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import logoVitta from '@/assets/logo-vitta.png';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation();
+  const pathname = usePathname();
 
-  const isActive = (path: string) => location.pathname === path;
+  const isActive = (path: string) => pathname === path;
 
   const navItems = [
     { path: '/', label: 'Início' },
@@ -24,11 +28,12 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link to="/" className="flex-shrink-0 flex items-center">
-            <img 
-              src={logoVitta} 
-              alt="Vitta Micro Market" 
+          <Link href="/" className="flex-shrink-0 flex items-center">
+            <Image
+              src={logoVitta}
+              alt="Vitta Micro Market"
               className="h-10 w-auto"
+              priority
             />
           </Link>
 
@@ -38,12 +43,11 @@ const Navigation = () => {
               {navItems.map((item) => (
                 <Link
                   key={item.path}
-                  to={item.path}
-                  className={`px-3 py-2 text-sm font-medium transition-colors duration-200 ${
-                    isActive(item.path)
-                      ? 'text-vitta-green border-b-2 border-vitta-green'
-                      : 'text-vitta-brown hover:text-vitta-green'
-                  }`}
+                  href={item.path}
+                  className={`px-3 py-2 text-sm font-medium transition-colors duration-200 ${isActive(item.path)
+                    ? 'text-vitta-green border-b-2 border-vitta-green'
+                    : 'text-vitta-brown hover:text-vitta-green'
+                    }`}
                 >
                   {item.label}
                 </Link>
@@ -53,7 +57,7 @@ const Navigation = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Link to="/solicitar-proposta">
+            <Link href="/solicitar-proposta">
               <Button className="btn-wellness">
                 Solicitar Proposta
               </Button>
@@ -78,20 +82,19 @@ const Navigation = () => {
               {navItems.map((item) => (
                 <Link
                   key={item.path}
-                  to={item.path}
+                  href={item.path}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`block px-3 py-2 text-base font-medium rounded-lg transition-colors ${
-                    isActive(item.path)
-                      ? 'text-vitta-green bg-vitta-green/10'
-                      : 'text-vitta-brown hover:text-vitta-green hover:bg-vitta-green/5'
-                  }`}
+                  className={`block px-3 py-2 text-base font-medium rounded-lg transition-colors ${isActive(item.path)
+                    ? 'text-vitta-green bg-vitta-green/10'
+                    : 'text-vitta-brown hover:text-vitta-green hover:bg-vitta-green/5'
+                    }`}
                 >
                   {item.label}
                 </Link>
               ))}
               <div className="pt-4">
-                <Link to="/solicitar-proposta" className="block">
-                  <Button 
+                <Link href="/solicitar-proposta" className="block">
+                  <Button
                     className="btn-wellness w-full"
                     onClick={() => setIsMenuOpen(false)}
                   >

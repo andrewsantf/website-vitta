@@ -1,89 +1,127 @@
+"use client";
+
 import { Button } from '@/components/ui/button';
-import { ArrowRight, CheckCircle, Clock, ShieldCheck } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { ArrowRight, CheckCircle, Clock, ShieldCheck, PlayCircle } from 'lucide-react';
+import Link from 'next/link';
+import Image from 'next/image';
 import heroImage from '@/assets/hero-micro-market.jpg';
+import { motion, Variants } from 'framer-motion';
 
 const HeroSection = () => {
-  const benefits = [
-    "Sem custo de instalação",
-    "Rapidez e praticidade",
-    "Funcionamento 24/7",
-    "Tecnologia de ponta"
-  ];
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
+  };
 
   return (
-    <section className="bg-gradient-hero min-h-[90vh] flex items-center">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Content */}
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-heading text-vitta-brown leading-tight">
-                Leve a conveniência e o <span className="text-vitta-green">bem-estar</span> da Vitta
-              </h1>
-              <p className="text-xl text-muted-foreground leading-relaxed">
-                Micro markets autônomos, sem custo de instalação e com praticidade
-                total para seu condomínio ou empresa. Rápido, fácil e disponível 24h.
-              </p>
+    <section className="relative min-h-[92vh] flex items-center overflow-hidden bg-secondary/30">
+      {/* Background Elements - Optimized for Performance */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-vitta-green/10 rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/4" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-vitta-brown/5 rounded-full blur-3xl opacity-50 translate-y-1/2 -translate-x-1/4" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+          {/* Content Side */}
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            className="space-y-10"
+          >
+            <div className="space-y-6">
+              <motion.div variants={itemVariants} className="inline-flex items-center space-x-2 bg-white/50 backdrop-blur-sm border border-vitta-green/20 px-4 py-1.5 rounded-full">
+                <span className="w-2 h-2 rounded-full bg-vitta-green animate-pulse" />
+                <span className="text-sm font-medium text-vitta-green-dark">Revolução em Conveniência</span>
+              </motion.div>
+
+              <motion.h1 variants={itemVariants} className="text-5xl md:text-6xl lg:text-7xl font-bold font-heading text-vitta-green-dark leading-[1.05]">
+                Seu mercado <br />
+                <span className="text-transparent bg-clip-text bg-gradient-wellness">inteligente</span> e saudável
+              </motion.h1>
+
+              <motion.p variants={itemVariants} className="text-xl text-muted-foreground leading-relaxed max-w-lg">
+                Leve tecnologia e bem-estar para seu condomínio ou empresa.
+                Sem custos de instalação, 100% autônomo e disponível 24h.
+              </motion.p>
             </div>
 
-            {/* Benefits */}
-            <div className="grid grid-cols-2 gap-4">
-              {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-center space-x-2">
-                  <CheckCircle className="text-vitta-green flex-shrink-0" size={20} />
-                  <span className="text-vitta-brown font-medium">{benefit}</span>
-                </div>
-              ))}
-            </div>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/para-empresas#proposta" className="w-full sm:w-auto">
-                <Button className="btn-wellness group w-full sm:w-auto">
-                  Proposta para sua Empresa
+            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4">
+              <Link href="/para-empresas#proposta">
+                <Button className="h-14 px-8 rounded-2xl bg-vitta-green hover:bg-vitta-green-dark text-white shadow-lg shadow-vitta-green/25 hover:shadow-vitta-green/40 transition-all duration-300 text-base font-semibold w-full sm:w-auto">
+                  Para Empresas
+                  <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
-              <Link to="/para-condominios#proposta" className="w-full sm:w-auto">
-                <Button className="btn-wellness group w-full sm:w-auto">
-                  Proposta para seu Condomínio
+              <Link href="/para-condominios#proposta">
+                <Button variant="outline" className="h-14 px-8 rounded-2xl border-2 border-vitta-green/20 text-vitta-green-dark hover:bg-vitta-green/5 hover:border-vitta-green transition-all duration-300 text-base font-semibold w-full sm:w-auto bg-transparent">
+                  Para Condomínios
                 </Button>
               </Link>
-            </div>
-          </div>
+            </motion.div>
 
-          {/* Hero Image */}
-          <div className="relative">
-            <div className="relative overflow-hidden rounded-2xl shadow-elegant">
-              <img
+            <motion.div variants={itemVariants} className="flex items-center gap-8 pt-4">
+              <div className="flex -space-x-4">
+                {[1, 2, 3, 4].map((i) => (
+                  <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-gray-200" style={{ backgroundImage: `url(https://i.pravatar.cc/100?img=${i + 10})`, backgroundSize: 'cover' }} />
+                ))}
+              </div>
+              <div className="text-sm">
+                <p className="font-bold text-vitta-green-dark">Mais de 500+</p>
+                <p className="text-muted-foreground">Clientes satisfeitos</p>
+              </div>
+            </motion.div>
+          </motion.div>
+
+          {/* Image Side */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+            className="relative"
+          >
+            <div className="relative z-10 rounded-[2.5rem] overflow-hidden shadow-2xl shadow-vitta-green/10 border-4 border-white/50 backdrop-blur-sm">
+              <Image
                 src={heroImage}
-                alt="Micro market moderno da Vitta em ambiente corporativo"
-                className="w-full h-auto object-cover"
+                alt="Vitta Micro Market Moderno"
+                className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
+                priority
               />
-              <div className="absolute inset-0 bg-gradient-to-tr from-vitta-green/20 to-transparent"></div>
-            </div>
 
-            {/* Floating Stats */}
-            <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-3 md:p-5 shadow-xl border border-vitta-green/10 flex items-center gap-2 md:gap-3 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
-              <div className="bg-vitta-green/10 p-1.5 md:p-2.5 rounded-xl text-vitta-green">
-                <Clock size={24} className="w-4 h-4 md:w-6 md:h-6" />
+              {/* Floating Cards */}
+              <div className="absolute top-4 right-4 md:top-8 md:right-8 glass-panel p-2 md:p-4 rounded-2xl flex items-center gap-2 md:gap-3 max-w-[150px] md:max-w-none">
+                <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-vitta-green/10 flex items-center justify-center text-vitta-green shrink-0">
+                  <Clock className="w-4 h-4 md:w-5 md:h-5" />
+                </div>
+                <div>
+                  <p className="text-[10px] md:text-xs text-muted-foreground leading-tight">Funcionamento</p>
+                  <p className="text-xs md:text-base font-bold text-vitta-green-dark leading-tight">24h / Dia</p>
+                </div>
               </div>
-              <div>
-                <div className="text-lg md:text-2xl font-bold text-vitta-green leading-none">24/7</div>
-                <div className="text-[10px] md:text-xs text-vitta-brown font-medium mt-0.5">Funcionamento</div>
-              </div>
-            </div>
 
-            <div className="absolute -top-6 -right-6 bg-white rounded-2xl p-3 md:p-5 shadow-xl border border-vitta-green/10 flex items-center gap-2 md:gap-3 animate-in fade-in slide-in-from-top-4 duration-700 delay-500">
-              <div className="bg-vitta-green/10 p-1.5 md:p-2.5 rounded-xl text-vitta-green">
-                <ShieldCheck size={24} className="w-4 h-4 md:w-6 md:h-6" />
-              </div>
-              <div>
-                <div className="text-lg md:text-2xl font-bold text-vitta-green leading-none">100%</div>
-                <div className="text-[10px] md:text-xs text-vitta-brown font-medium mt-0.5">Autônomo</div>
+              <div className="absolute bottom-4 left-4 md:bottom-8 md:left-8 glass-panel p-2 md:p-4 rounded-2xl flex items-center gap-2 md:gap-3 max-w-[160px] md:max-w-none">
+                <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-vitta-green/10 flex items-center justify-center text-vitta-green shrink-0">
+                  <ShieldCheck className="w-4 h-4 md:w-5 md:h-5" />
+                </div>
+                <div>
+                  <p className="text-[10px] md:text-xs text-muted-foreground leading-tight">Segurança</p>
+                  <p className="text-xs md:text-base font-bold text-vitta-green-dark leading-tight">100% Autônomo</p>
+                </div>
               </div>
             </div>
-          </div>
+          </motion.div>
+
         </div>
       </div>
     </section>

@@ -1,0 +1,3 @@
+module.exports=[19032,a=>{"use strict";let b="https://formspree.io/f/xpwvlklo",c=async a=>{try{console.log("Enviando para:",b),console.log("Dados:",a);let c=await fetch(b,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(a)});if(c.ok)return{success:!0};{let a=await c.json();return{success:!1,message:a.error||"Falha ao enviar formulário."}}}catch(a){return console.error("Erro ao enviar formulário:",a),{success:!1,message:"Falha ao enviar formulário. Tente novamente."}}};a.s(["submitToFormspree",0,c])}];
+
+//# sourceMappingURL=src_lib_api_ts_26bff7e8._.js.map

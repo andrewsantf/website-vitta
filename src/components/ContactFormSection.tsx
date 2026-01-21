@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -7,7 +9,14 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { useToast } from '@/hooks/use-toast';
 import { Send } from 'lucide-react';
 
-const ContactFormSection = () => {
+
+import { cn } from '@/lib/utils';
+
+interface ContactFormSectionProps {
+  className?: string;
+}
+
+const ContactFormSection = ({ className }: ContactFormSectionProps) => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
@@ -61,7 +70,7 @@ const ContactFormSection = () => {
   };
 
   return (
-    <section id="contato" className="py-20 bg-background">
+    <section id="contato" className={cn("py-20 bg-background", className)}>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
