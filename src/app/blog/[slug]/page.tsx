@@ -88,20 +88,9 @@ export default async function BlogPostPage({ params }: Props) {
                     </div>
                 </header>
 
-                {/* Featured Image */}
-                <div className="relative w-full h-[400px] md:h-[500px] mb-12 rounded-2xl overflow-hidden shadow-lg">
-                    <Image
-                        src={post.image}
-                        alt={post.title}
-                        fill
-                        className="object-cover"
-                        priority
-                    />
-                </div>
-
                 {/* Content */}
                 <div
-                    className="prose prose-lg max-w-none prose-headings:text-vitta-brown prose-a:text-vitta-green prose-img:rounded-xl text-gray-700 leading-relaxed"
+                    className="prose prose-lg max-w-none prose-headings:text-vitta-brown prose-a:text-vitta-green prose-img:rounded-xl text-gray-700 [&_p]:mb-8 [&_p]:leading-relaxed"
                     dangerouslySetInnerHTML={{ __html: post.content }}
                 />
 

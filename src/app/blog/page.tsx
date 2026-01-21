@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function BlogPage() {
     return (
-        <main className="min-h-screen bg-gray-50 pt-20 pb-20">
+        <main className="min-h-screen bg-gray-50 pb-20">
             {/* Blog Main Container */}
             {/* Header Section */}
             {/* Header Section */}

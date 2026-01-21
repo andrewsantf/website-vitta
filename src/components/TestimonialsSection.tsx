@@ -137,8 +137,8 @@ const TestimonialsSection = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="hidden md:flex" />
-            <CarouselNext className="hidden md:flex" />
+            <CarouselPrevious className="flex -left-4 md:-left-12 bg-white border-vitta-green text-vitta-green hover:bg-vitta-green hover:text-white" />
+            <CarouselNext className="flex -right-4 md:-right-12 bg-white border-vitta-green text-vitta-green hover:bg-vitta-green hover:text-white" />
           </Carousel>
         </div>
       </div>
