@@ -1,11 +1,15 @@
 {
   "/_global-error/page": "app/_global-error/page.js",
   "/_not-found/page": "app/_not-found/page.js",
+  "/blog/[slug]/page": "app/blog/[slug]/page.js",
+  "/blog/page": "app/blog/page.js",
   "/como-funciona/page": "app/como-funciona/page.js",
   "/contato/page": "app/contato/page.js",
   "/faq/page": "app/faq/page.js",
   "/page": "app/page.js",
   "/para-condominios/page": "app/para-condominios/page.js",
   "/para-empresas/page": "app/para-empresas/page.js",
-  "/solicitar-proposta/page": "app/solicitar-proposta/page.js"
+  "/privacidade/page": "app/privacidade/page.js",
+  "/solicitar-proposta/page": "app/solicitar-proposta/page.js",
+  "/termos/page": "app/termos/page.js"
 }

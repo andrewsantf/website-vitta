@@ -1,0 +1,3 @@
+module.exports=[62753,a=>{a.v("/_next/static/media/logo-vitta.a6918104.png")},18881,a=>{"use strict";let b=(0,a.i(1269).default)("Linkedin",[["path",{d:"M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z",key:"c2jq9f"}],["rect",{width:"4",height:"12",x:"2",y:"9",key:"mk3on5"}],["circle",{cx:"4",cy:"4",r:"2",key:"bt5ra8"}]]);a.s(["Linkedin",()=>b],18881)},68367,a=>{"use strict";let b=(0,a.i(1269).default)("Facebook",[["path",{d:"M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z",key:"1jg4f8"}]]);a.s(["Facebook",()=>b],68367)}];
+
+//# sourceMappingURL=_9cda168c._.js.map

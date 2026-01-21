@@ -1,11 +1,15 @@
 {
   "/_global-error/page": "/_global-error",
   "/_not-found/page": "/_not-found",
+  "/blog/[slug]/page": "/blog/[slug]",
+  "/blog/page": "/blog",
   "/como-funciona/page": "/como-funciona",
   "/contato/page": "/contato",
   "/faq/page": "/faq",
   "/page": "/",
   "/para-condominios/page": "/para-condominios",
   "/para-empresas/page": "/para-empresas",
-  "/solicitar-proposta/page": "/solicitar-proposta"
+  "/privacidade/page": "/privacidade",
+  "/solicitar-proposta/page": "/solicitar-proposta",
+  "/termos/page": "/termos"
 }

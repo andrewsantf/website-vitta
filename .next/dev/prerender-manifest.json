@@ -1,11 +1,1 @@
-{
-  "version": 4,
-  "routes": {},
-  "dynamicRoutes": {},
-  "notFoundRoutes": [],
-  "preview": {
-    "previewModeId": "7213ea6acda3fafd6fe9f90975f674f6",
-    "previewModeSigningKey": "86b012164ae41e7b544e478563d5c5902ac4c9b52923513944e0791441e57708",
-    "previewModeEncryptionKey": "252146371dfea5987ddb80bc5d7107914f0dab5550a90dd2b4129a2607607196"
-  }
-}
+{"version":4,"routes":{"/blog/futuro-conveniencia-condominios-micro-market":{},"/blog/valorizacao-imovel-mercado-predio":{},"/blog/micro-market-vs-vending-machine-empresas":{}},"dynamicRoutes":{"/blog/[slug]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/blog/[slug]","routeRegex":"^\\/blog\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"1108ed56a68ac86d619b09ffc6373383","previewModeSigningKey":"eca4a95b443105886868fe122ee55f98832d6b1275c0664c687996c81457090e","previewModeEncryptionKey":"f4fcefe10beb380ab1eb50f12e0165adeb7d005536b188ccec2de91d12181dc0"}}

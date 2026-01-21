@@ -20,6 +20,7 @@ const Navigation = () => {
     { path: '/para-empresas', label: 'Para Empresas' },
     { path: '/para-condominios', label: 'Para Condomínios' },
     { path: '/faq', label: 'FAQ' },
+    { path: '/blog', label: 'Blog' },
     { path: '/contato', label: 'Contato' },
   ];
 
