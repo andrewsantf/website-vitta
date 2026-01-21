@@ -47,8 +47,8 @@ const HeroSection = () => {
               </motion.div>
 
               <motion.h1 variants={itemVariants} className="text-5xl md:text-6xl lg:text-7xl font-bold font-heading text-vitta-green-dark leading-[1.05]">
-                Seu mercado <br />
-                <span className="text-transparent bg-clip-text bg-gradient-wellness">inteligente</span> e saudável
+                Seu mercado de conveniência <br />
+                <span className="text-transparent bg-clip-text bg-gradient-wellness">inteligente</span> e completo
               </motion.h1>
 
               <motion.p variants={itemVariants} className="text-xl text-muted-foreground leading-relaxed max-w-lg">
