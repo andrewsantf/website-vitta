@@ -24,7 +24,6 @@ const BlogSection = () => {
                     <Link href="/blog">
                         <Button variant="outline" className="group">
                             Ver todos os artigos
-                            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                         </Button>
                     </Link>
                 </div>
@@ -70,7 +69,6 @@ const BlogSection = () => {
                                 <CardFooter className="pt-0 pb-6">
                                     <span className="text-vitta-blue font-semibold text-sm group-hover:underline flex items-center">
                                         Ler artigo completo
-                                        <ArrowRight className="ml-1 h-3 w-3" />
                                     </span>
                                 </CardFooter>
                             </Card>

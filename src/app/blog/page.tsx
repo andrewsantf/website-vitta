@@ -81,7 +81,6 @@ export default function BlogPage() {
                                 <CardFooter className="pt-0 pb-6 border-t border-gray-100 mt-auto">
                                     <span className="text-vitta-blue font-semibold text-sm group-hover:underline flex items-center mt-4">
                                         Ler artigo completo
-                                        <ArrowRight className="ml-1 h-3 w-3" />
                                     </span>
                                 </CardFooter>
                             </Card>

@@ -109,10 +109,10 @@ const HowItWorksSection = () => {
               />
 
               {/* Overlay Content */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex flex-col justify-end p-4 md:p-8">
-                <div className="glass-panel p-4 md:p-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-white">
-                  <p className="font-semibold text-base md:text-lg mb-1 md:mb-2">Autoatendimento Prático</p>
-                  <p className="text-xs md:text-sm text-white/80 leading-relaxed">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex flex-col justify-end p-2 md:p-6">
+                <div className="glass-panel p-2 md:p-4 rounded-lg md:rounded-xl bg-white/10 backdrop-blur-md border border-white/20 text-white">
+                  <p className="font-semibold text-xs md:text-base mb-0.5 md:mb-1">Autoatendimento Prático</p>
+                  <p className="text-[9px] md:text-xs text-white/80 leading-tight">
                     Experiência de compra ágil e intuitiva. A tecnologia cuida do resto para você aproveitar seu tempo.
                   </p>
                 </div>

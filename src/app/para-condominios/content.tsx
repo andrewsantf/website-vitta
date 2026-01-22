@@ -139,7 +139,6 @@ const ParaCondominiosContent = () => {
                                 }}
                             >
                                 Solicitar Visita Técnica
-                                <ArrowRight className="ml-2 w-5 h-5" />
                             </Button>
                         </motion.div>
 
@@ -158,13 +157,13 @@ const ParaCondominiosContent = () => {
                             </div>
 
                             {/* Floating Badge */}
-                            <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl flex items-center gap-4 animate-float">
-                                <div className="w-12 h-12 bg-vitta-green/10 rounded-full flex items-center justify-center text-vitta-green">
-                                    <Home size={24} />
+                            <div className="absolute -bottom-3 -left-3 md:-bottom-6 md:-left-6 bg-white p-2 md:p-4 rounded-lg md:rounded-2xl shadow-xl flex items-center gap-2 md:gap-4 animate-float">
+                                <div className="w-8 h-8 md:w-12 md:h-12 bg-vitta-green/10 rounded-full flex items-center justify-center text-vitta-green">
+                                    <Home className="w-4 h-4 md:w-6 md:h-6" />
                                 </div>
                                 <div>
-                                    <p className="text-xs text-muted-foreground font-medium uppercase tracking-wider">Instalação</p>
-                                    <p className="text-lg font-bold text-vitta-green-dark">Zero Custo</p>
+                                    <p className="text-[8px] md:text-xs text-muted-foreground font-medium uppercase tracking-wider leading-none mb-0.5">Instalação</p>
+                                    <p className="text-sm md:text-lg font-bold text-vitta-green-dark leading-none">Zero Custo</p>
                                 </div>
                             </div>
                         </motion.div>

@@ -59,13 +59,12 @@ const HeroSection = () => {
 
             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4">
               <Link href="/para-empresas#proposta">
-                <Button className="h-14 px-8 rounded-2xl bg-vitta-green hover:bg-vitta-green-dark text-white shadow-lg shadow-vitta-green/25 hover:shadow-vitta-green/40 transition-all duration-300 text-base font-semibold w-full sm:w-auto">
+                <Button className="h-14 px-8 rounded-2xl bg-vitta-green hover:bg-vitta-green-dark text-white shadow-lg shadow-vitta-green/25 hover:shadow-vitta-green/40 transition-all duration-300 text-base font-semibold w-full sm:w-64">
                   Para Empresas
-                  <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
               <Link href="/para-condominios#proposta">
-                <Button variant="outline" className="h-14 px-8 rounded-2xl border-2 border-vitta-green/20 text-vitta-green-dark hover:bg-vitta-green/5 hover:border-vitta-green transition-all duration-300 text-base font-semibold w-full sm:w-auto bg-transparent">
+                <Button variant="outline" className="h-14 px-8 rounded-2xl border-2 border-vitta-green/20 text-vitta-green-dark hover:bg-vitta-green/5 hover:border-vitta-green transition-all duration-300 text-base font-semibold w-full sm:w-64 bg-transparent">
                   Para Condomínios
                 </Button>
               </Link>
@@ -91,33 +90,33 @@ const HeroSection = () => {
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
             className="relative"
           >
-            <div className="relative z-10 rounded-[2.5rem] overflow-hidden shadow-2xl shadow-vitta-green/10 border-4 border-white/50 backdrop-blur-sm">
+            <div className="relative z-10 rounded-[2.5rem] overflow-hidden shadow-2xl shadow-vitta-green/10 border-8 border-white">
               <Image
                 src={heroImage}
                 alt="Vitta Micro Market Moderno"
                 className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
                 priority
               />
+            </div>
 
-              {/* Floating Cards */}
-              <div className="absolute top-4 right-4 md:top-8 md:right-8 glass-panel p-2 md:p-4 rounded-2xl flex items-center gap-2 md:gap-3 max-w-[150px] md:max-w-none">
-                <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-vitta-green/10 flex items-center justify-center text-vitta-green shrink-0">
-                  <Clock className="w-4 h-4 md:w-5 md:h-5" />
-                </div>
-                <div>
-                  <p className="text-[10px] md:text-xs text-muted-foreground leading-tight">Funcionamento</p>
-                  <p className="text-xs md:text-base font-bold text-vitta-green-dark leading-tight">24h / Dia</p>
-                </div>
+            {/* Floating Cards */}
+            <div className="absolute -top-3 -right-3 md:-top-6 md:-right-6 glass-panel p-2 md:p-4 rounded-2xl flex items-center gap-2 md:gap-3 max-w-[150px] md:max-w-none animate-float z-20">
+              <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-vitta-green/10 flex items-center justify-center text-vitta-green shrink-0">
+                <Clock className="w-4 h-4 md:w-5 md:h-5" />
               </div>
+              <div>
+                <p className="text-[10px] md:text-xs text-muted-foreground leading-tight">Funcionamento</p>
+                <p className="text-xs md:text-base font-bold text-vitta-green-dark leading-tight">24h / Dia</p>
+              </div>
+            </div>
 
-              <div className="absolute bottom-4 left-4 md:bottom-8 md:left-8 glass-panel p-2 md:p-4 rounded-2xl flex items-center gap-2 md:gap-3 max-w-[160px] md:max-w-none">
-                <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-vitta-green/10 flex items-center justify-center text-vitta-green shrink-0">
-                  <ShieldCheck className="w-4 h-4 md:w-5 md:h-5" />
-                </div>
-                <div>
-                  <p className="text-[10px] md:text-xs text-muted-foreground leading-tight">Segurança</p>
-                  <p className="text-xs md:text-base font-bold text-vitta-green-dark leading-tight">100% Autônomo</p>
-                </div>
+            <div className="absolute -bottom-3 -left-3 md:-bottom-6 md:-left-6 glass-panel p-2 md:p-4 rounded-2xl flex items-center gap-2 md:gap-3 max-w-[160px] md:max-w-none animate-float z-20" style={{ animationDelay: '1.5s' }}>
+              <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-vitta-green/10 flex items-center justify-center text-vitta-green shrink-0">
+                <ShieldCheck className="w-4 h-4 md:w-5 md:h-5" />
+              </div>
+              <div>
+                <p className="text-[10px] md:text-xs text-muted-foreground leading-tight">Segurança</p>
+                <p className="text-xs md:text-base font-bold text-vitta-green-dark leading-tight">100% Autônomo</p>
               </div>
             </div>
           </motion.div>
