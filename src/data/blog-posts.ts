@@ -74,7 +74,7 @@ export const blogPosts: BlogPost[] = [
     `,
     author: "Especialistas Vitta",
     date: "20 Jan 2026",
-    image: "https://images.unsplash.com/photo-1578916171728-46686eac8d58?w=800&auto=format&fit=crop&q=60",
+    image: "/blog/future-convenience.jpg",
     category: "Tendências",
     readTime: "8 min de leitura"
   },
@@ -119,7 +119,7 @@ export const blogPosts: BlogPost[] = [
     `,
     author: "Consultoria Imobiliária Vitta",
     date: "18 Jan 2026",
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&auto=format&fit=crop&q=60",
+    image: "/blog/real-estate-value.png",
     category: "Imóveis",
     readTime: "6 min de leitura"
   },
